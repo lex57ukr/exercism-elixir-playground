@@ -1,0 +1,76 @@
+{
+  "version": "0.1.0",
+  "_runner": "terminal",
+  "command": "mix",
+  "isShellCommand": true,
+  "args": [],
+  "showOutput": "always",
+  "tasks": [
+    {
+      "taskName": "compile",
+      "isBuildCommand": true,
+      "showOutput": "silent",
+      "problemMatcher": {
+        "owner": "mix",
+        "fileLocation": [
+          "relative",
+          "${workspaceRoot}"
+        ],
+        "pattern": [
+          {
+            "regexp": "^== Compilation (\\w+) [io]n file (.+) ==$",
+            "severity": 1
+          },
+          {
+            "regexp": "^\\*{2} \\(.+\\) (.+):(\\d+): (.+)$",
+            "file": 1,
+            "line": 2,
+            "message": 3
+          }
+        ]
+      }
+    },
+    {
+      "taskName": "test",
+      "isTestCommand": true,
+      "args": [
+        "--stale"
+      ]
+    },
+    {
+      "taskName": "credo",
+      "args": [
+        "--strict"
+      ]
+    },
+    {
+      "taskName": "clean"
+    },
+    {
+      "taskName": "submit",
+      "command": "exercism",
+      "showOutput": "always",
+      "args": [
+        "submit",
+        "${file}"
+      ]
+    },
+    {
+      "taskName": "fetch",
+      "command": "exercism",
+      "showOutput": "always",
+      "args": [
+        "fetch"
+      ]
+    },
+    {
+      "taskName": "status",
+      "command": "exercism",
+      "showOutput": "always",
+      "args": [
+        "status",
+        "elixir"
+      ]
+    }
+  ]
+}
