@@ -38,6 +38,12 @@
       ]
     },
     {
+      "taskName": "run",
+      "args": [
+        "${file}"
+      ]
+    },
+    {
       "taskName": "credo",
       "args": [
         "--strict"
